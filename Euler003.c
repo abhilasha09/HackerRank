@@ -1,6 +1,3 @@
-//Test case 5 not passed
-
-
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
@@ -8,15 +5,15 @@
 #include <assert.h>
 #include <limits.h>
 #include <stdbool.h>
-long primeFactors(long n) 
+long long primeFactors(long long n) 
 { 
-   long mp;
+   long long mp;
     while (n%2 == 0) 
     { 
         mp=2;
         n = n/2; 
-    } 
-    for (int i = 3; i <=n; i = i+2) 
+    }
+    for (int i = 3; i <=sqrt(n); i = i+2) 
     {
         while (n%i == 0) 
         { 
@@ -24,6 +21,8 @@ long primeFactors(long n)
             mp=i;
         } 
     } 
+    if(n>2)
+    mp=n;
     return mp;
 }
   
